@@ -1,16 +1,20 @@
-import type { JSX } from "react"
+import React from 'react';
+import Navigation from './components/Navigation';
+import Hero from './components/Hero';
+import About from './components/About';
+import Services from './components/Services';
+import Footer from './components/Footer';
 
-function App(): JSX.Element {
+const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <h1 className="text-4xl font-bold text-center py-8 text-gray-900">
-        Touros Mining
-      </h1>
-      <p className="text-center text-gray-600">
-        Landing page coming soon...
-      </p>
+    <div className="min-h-screen">
+      <Navigation />
+      <Hero />
+      <About />
+      <Services />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
