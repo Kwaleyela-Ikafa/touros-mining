@@ -1,23 +1,24 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
     company: [
-      { name: 'About Us', href: '/about' }
+      { name: 'About Us', href: '/about', isInternal: true }
     ],
     services: [
-      { name: 'Mining Operations', href: '/services/mining' },
-      { name: 'Logistics Solutions', href: '/services/logistics' },
-      { name: 'Heavy Machinery', href: '/services/machinery' },
-      { name: 'Transportation', href: '/services/transportation' }
+      { name: 'Mining Operations', href: '/services#mining', isInternal: true },
+      { name: 'Logistics Solutions', href: '/services#logistics', isInternal: true },
+      { name: 'Heavy Machinery', href: '/services#machinery', isInternal: true },
+      { name: 'Transportation', href: '/services#transportation', isInternal: true }
     ],
     contact: [
-      { name: 'Contact Us', href: '/contact' },
-      { name: 'Partnership Inquiries', href: '/contact?type=partnership' },
-      { name: 'Investor Relations', href: '/contact?type=investors' },
-      { name: 'Support Center', href: '/contact?type=support' }
+      { name: 'Contact Us', href: '/contact', isInternal: true },
+      { name: 'Partnership Inquiries', href: '/contact', isInternal: true },
+      { name: 'Investor Relations', href: '/contact', isInternal: true },
+      { name: 'Support Center', href: '/contact', isInternal: true }
     ]
   };
 
@@ -132,12 +133,12 @@ const Footer: React.FC = () => {
                 <ul className="space-y-3">
                   {footerLinks.company.map((link) => (
                     <li key={link.name}>
-                      <a
-                        href={link.href}
+                      <Link
+                        to={link.href}
                         className="text-gray-300 hover:text-[#f4712f] transition-colors duration-200 hover:underline"
                       >
                         {link.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -148,12 +149,12 @@ const Footer: React.FC = () => {
                 <ul className="space-y-3">
                   {footerLinks.services.map((link) => (
                     <li key={link.name}>
-                      <a
-                        href={link.href}
+                      <Link
+                        to={link.href}
                         className="text-gray-300 hover:text-[#f4712f] transition-colors duration-200 hover:underline"
                       >
                         {link.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -164,12 +165,12 @@ const Footer: React.FC = () => {
                 <ul className="space-y-3">
                   {footerLinks.contact.map((link) => (
                     <li key={link.name}>
-                      <a
-                        href={link.href}
+                      <Link
+                        to={link.href}
                         className="text-gray-300 hover:text-[#f4712f] transition-colors duration-200 hover:underline"
                       >
                         {link.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>

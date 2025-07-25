@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const About: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ const About: React.FC = () => {
             <div className="relative z-10">
               <img 
                 src="https://i.postimg.cc/d03CXwQj/pexels-tomfisk-2101137.webp" 
-                alt="Touros Mining facility - Modern mineral processing operations"
+                alt="CAT mining machinery operating in sandy terrain - Heavy equipment for mineral extraction"
                 className="w-full h-auto rounded-2xl shadow-2xl"
               />
             </div>
@@ -79,12 +80,15 @@ const About: React.FC = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="group bg-[#f4712f] hover:bg-[#f4712f]/90 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-[#f4712f]/25 hover:transform hover:-translate-y-1">
+              <Link 
+                to="/about"
+                className="group bg-[#f4712f] hover:bg-[#f4712f]/90 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-[#f4712f]/25 hover:transform hover:-translate-y-1 text-center"
+              >
                 Learn More About Us
                 <svg className="inline-block ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </button>
+              </Link>
             </div>
           </div>
         </div>

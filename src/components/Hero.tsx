@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden pb-20">
+    <section id="home" className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden pb-10">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -43,30 +44,37 @@ const Hero: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-16">
-              <button className="group bg-[#f4712f] hover:bg-[#f4712f]/90 text-white px-10 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-[#f4712f]/25 hover:transform hover:-translate-y-1">
+              <Link 
+                to="/services"
+                className="group bg-[#f4712f] hover:bg-[#f4712f]/90 text-white px-10 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-[#f4712f]/25 hover:transform hover:-translate-y-1 text-center"
+              >
                 <span>Explore Our Services</span>
                 <svg className="inline-block ml-3 w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </button>
+              </Link>
               
-              <button className="group border-2 border-gray-200 hover:border-[#f4712f] text-gray-700 hover:text-[#f4712f] px-10 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 hover:bg-[#f4712f]/5">
+              <Link 
+                to="/contact"
+                className="group border-2 border-gray-200 hover:border-[#f4712f] text-gray-700 hover:text-[#f4712f] px-10 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 hover:bg-[#f4712f]/5 text-center"
+              >
                 <span>Get In Touch</span>
                 <svg className="inline-block ml-3 w-5 h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                 </svg>
-              </button>
+              </Link>
             </div>
+
           </div>
 
           {/* Image */}
           <div className="relative lg:order-last">
             <div className="relative">
               {/* Main Image */}
-              <div className="relative ">
+              <div className="relative">
                 <img 
                   src="https://i.postimg.cc/zX5Ykfp6/pexels-pixabay-461789.webp" 
-                  alt="CAT mining machinery operating in sandy terrain - Advanced heavy equipment for mineral extraction"
+                  alt="CAT mining machinery operating in sandy terrain"
                   className="w-full h-auto rounded-3xl shadow-2xl hover:transform hover:scale-105 transition-transform duration-700"
                 />
               </div>
