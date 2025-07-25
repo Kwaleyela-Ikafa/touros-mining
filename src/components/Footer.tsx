@@ -1,8 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+
+  // Handle anchor link navigation for service sections
+  const handleServiceLinkClick = (href: string) => {
+    const [path, hash] = href.split('#');
+    navigate(path);
+    
+    // Small delay to ensure the page has navigated before scrolling
+    setTimeout(() => {
+      if (hash) {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    }, 100);
+  };
 
   const footerLinks = {
     company: [
@@ -149,12 +169,12 @@ const Footer: React.FC = () => {
                 <ul className="space-y-3">
                   {footerLinks.services.map((link) => (
                     <li key={link.name}>
-                      <Link
-                        to={link.href}
-                        className="text-gray-300 hover:text-[#f4712f] transition-colors duration-200 hover:underline"
+                      <button
+                        onClick={() => handleServiceLinkClick(link.href)}
+                        className="text-gray-300 hover:text-[#f4712f] transition-colors duration-200 hover:underline text-left"
                       >
                         {link.name}
-                      </Link>
+                      </button>
                     </li>
                   ))}
                 </ul>
