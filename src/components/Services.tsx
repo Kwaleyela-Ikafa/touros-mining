@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface ServiceCard {
   title: string;
@@ -164,12 +165,15 @@ const Services: React.FC = () => {
               </p>
 
               {/* Learn More Link */}
-              <button className="group/btn text-[#f4712f] hover:text-[#05102d] font-semibold text-sm transition-colors duration-300 flex items-center">
+              <Link 
+                to="/services"
+                className="group/btn text-[#f4712f] hover:text-[#05102d] font-semibold text-sm transition-colors duration-300 flex items-center"
+              >
                 Learn More
                 <svg className="ml-2 w-4 h-4 transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </button>
+              </Link>
             </div>
           ))}
         </div>
@@ -184,18 +188,24 @@ const Services: React.FC = () => {
             and drive sustainable growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="group bg-[#f4712f] hover:bg-[#f4712f]/90 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl hover:transform hover:-translate-y-1">
+            <Link 
+              to="/services"
+              className="group bg-[#f4712f] hover:bg-[#f4712f]/90 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl hover:transform hover:-translate-y-1 text-center"
+            >
               View All Services
               <svg className="inline-block ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </button>
-            <button className="group border-2 border-[#515760]/20 hover:border-[#f4712f] text-[#515760] hover:text-[#f4712f] px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:bg-[#f4712f]/5">
+            </Link>
+            <Link 
+              to="/contact"
+              className="group border-2 border-[#515760]/20 hover:border-[#f4712f] text-[#515760] hover:text-[#f4712f] px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:bg-[#f4712f]/5 text-center"
+            >
               Request Consultation
               <svg className="inline-block ml-2 w-5 h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,11 +15,18 @@ const Navigation: React.FC = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Contact', href: '/contact' },
   ];
+
+  const isActiveRoute = (href: string) => {
+    if (href === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname.startsWith(href);
+  };
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -27,34 +36,51 @@ const Navigation: React.FC = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-[#05102d]">
-              <span className="text-[#f4712f]">Touros</span> Mining
-            </h1>
+            <Link to="/" className="flex items-center space-x-3">
+              {/* Image Logo - Always visible */}
+              <img 
+                src="/touros-logo.png" 
+                alt="Touros Mining Logo" 
+                className="h-20 w-20 object-contain"
+              />
+              {/* Text Logo - Hidden on mobile, visible on desktop */}
+              <span className="hidden md:block text-3xl font-bold text-[#05102d]">
+                <span className="text-[#f4712f]">Touros</span> Mining
+              </span>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
-                  className="text-[#515760] hover:text-[#f4712f] px-3 py-2 text-sm font-medium transition-colors duration-200 relative group"
+                  to={item.href}
+                  className={`px-3 py-2 text-sm font-medium transition-colors duration-200 relative group ${
+                    isActiveRoute(item.href) 
+                      ? 'text-[#f4712f]' 
+                      : 'text-[#515760] hover:text-[#f4712f]'
+                  }`}
                 >
                   {item.name}
-                  <span className="absolute inset-x-0 bottom-0 h-0.5 bg-[#f4712f] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
-                </a>
+                  <span className={`absolute inset-x-0 bottom-0 h-0.5 bg-[#f4712f] transition-transform duration-200 ${
+                    isActiveRoute(item.href) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                  }`}></span>
+                </Link>
               ))}
             </div>
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <button className="bg-[#f4712f] hover:bg-[#f4712f]/90 text-white px-6 py-2.5 rounded-xl font-medium transition-all duration-200 hover:shadow-lg hover:transform hover:-translate-y-0.5">
+            <Link 
+              to="/contact"
+              className="bg-[#f4712f] hover:bg-[#f4712f]/90 text-white px-6 py-2.5 rounded-xl font-medium transition-all duration-200 hover:shadow-lg hover:transform hover:-translate-y-0.5"
+            >
               Get Quote
-            </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -81,18 +107,26 @@ const Navigation: React.FC = () => {
       } overflow-hidden bg-white/95 backdrop-blur-md border-t border-gray-100`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
-              href={item.href}
-              className="text-[#515760] hover:text-[#f4712f] block px-3 py-2 text-base font-medium transition-colors duration-200"
+              to={item.href}
+              className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${
+                isActiveRoute(item.href)
+                  ? 'text-[#f4712f]'
+                  : 'text-[#515760] hover:text-[#f4712f]'
+              }`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
-          <button className="w-full text-left bg-[#f4712f] hover:bg-[#f4712f]/90 text-white px-3 py-2.5 rounded-xl font-medium transition-all duration-200 mt-4">
+          <Link 
+            to="/contact"
+            className="w-full text-left bg-[#f4712f] hover:bg-[#f4712f]/90 text-white px-3 py-2.5 rounded-xl font-medium transition-all duration-200 mt-4 block"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
             Get Quote
-          </button>
+          </Link>
         </div>
       </div>
     </nav>
