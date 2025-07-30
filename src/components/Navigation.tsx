@@ -36,10 +36,18 @@ const Navigation: React.FC = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className="text-2xl font-bold text-[#05102d]">
-              <span className="text-[#f4712f]">Touros</span> Mining
+            <Link to="/" className="flex items-center space-x-3">
+              {/* Image Logo - Always visible */}
+              <img 
+                src="/touros-logo.png" 
+                alt="Touros Mining Logo" 
+                className="h-20 w-20 object-contain"
+              />
+              {/* Text Logo - Hidden on mobile, visible on desktop */}
+              <span className="hidden md:block text-3xl font-bold text-[#05102d]">
+                <span className="text-[#f4712f]">Touros</span> Mining
+              </span>
             </Link>
           </div>
 

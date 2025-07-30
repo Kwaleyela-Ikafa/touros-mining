@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://tourosmining.com/</loc>
+    <lastmod>2025-01-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://i.postimg.cc/zX5Ykfp6/pexels-pixabay-461789.webp</image:loc>
+      <image:caption>CAT mining machinery operating in sandy terrain</image:caption>
+      <image:title>Touros Mining Heavy Equipment</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.postimg.cc/d03CXwQj/pexels-tomfisk-2101137.webp</image:loc>
+      <image:caption>CAT mining machinery operating in sandy terrain - Heavy equipment for mineral extraction</image:caption>
+      <image:title>Mining Operations Equipment</image:title>
+    </image:image>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://tourosmining.com/about</loc>
+    <lastmod>2025-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://i.postimg.cc/gJPPH6Rh/about.webp</image:loc>
+      <image:caption>Touros Mining operations</image:caption>
+      <image:title>About Touros Mining Company</image:title>
+    </image:image>
+  </url>
+
+  <!-- Services Page -->
+  <url>
+    <loc>https://tourosmining.com/services</loc>
+    <lastmod>2025-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://i.postimg.cc/SKWX6L8c/mining-operations.webp</image:loc>
+      <image:caption>Mining operations</image:caption>
+      <image:title>Touros Mining Operations</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.postimg.cc/xdtQVcVW/mining-logistics.webp</image:loc>
+      <image:caption>Logistics operations</image:caption>
+      <image:title>Mining Logistics Solutions</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.postimg.cc/FFnKJCq2/heavy-machinery.webp</image:loc>
+      <image:caption>Heavy machinery</image:caption>
+      <image:title>Heavy Mining Machinery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.postimg.cc/gJtG8rMv/mining-transportation.webp</image:loc>
+      <image:caption>Transportation fleet</image:caption>
+      <image:title>Mining Transportation Services</image:title>
+    </image:image>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://tourosmining.com/contact</loc>
+    <lastmod>2025-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>
