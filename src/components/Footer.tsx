@@ -29,16 +29,17 @@ const Footer: React.FC = () => {
       { name: 'About Us', href: '/about', isInternal: true }
     ],
     services: [
-      { name: 'Mining Operations', href: '/services#mining', isInternal: true },
-      { name: 'Logistics Solutions', href: '/services#logistics', isInternal: true },
-      { name: 'Heavy Machinery', href: '/services#machinery', isInternal: true },
-      { name: 'Transportation', href: '/services#transportation', isInternal: true }
+      { name: 'Manual Testing', href: '/services#manual', isInternal: true },
+      { name: 'Automation Testing', href: '/services#automation', isInternal: true },
+      { name: 'Performance Testing', href: '/services#performance', isInternal: true },
+      { name: 'Security Testing', href: '/services#security', isInternal: true },
+      { name: 'Mobile Testing', href: '/services#mobile', isInternal: true },
+      { name: 'QA Consulting', href: '/services#consulting', isInternal: true }
     ],
     contact: [
       { name: 'Contact Us', href: '/contact', isInternal: true },
-      { name: 'Partnership Inquiries', href: '/contact', isInternal: true },
-      { name: 'Investor Relations', href: '/contact', isInternal: true },
-      { name: 'Support Center', href: '/contact', isInternal: true }
+      { name: 'Get a Quote', href: '/contact', isInternal: true },
+      { name: 'Request Consultation', href: '/contact', isInternal: true }
     ]
   };
 
@@ -73,7 +74,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-[#05102d] text-white relative overflow-hidden">
+    <footer className="bg-[#05102d] text-white relative overflow-hidden" role="contentinfo" aria-label="Site footer">
 
       <div className="relative z-10">
         {/* Main Footer Content */}
@@ -83,79 +84,85 @@ const Footer: React.FC = () => {
             <div className="lg:col-span-2">
               <div className="mb-8">
                 <h2 className="text-3xl font-bold mb-4">
-                  <span className="text-[#f4712f]">Touros</span> Mining
+                  <span className="text-[#3064BD]">Parse</span> Technologies
                 </h2>
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  Leading Zambia's mining innovation with sustainable practices and cutting-edge technology.
+                  Lusaka's premier software testing and quality assurance company, delivering excellence in every project.
                 </p>
               </div>
 
               {/* Contact Info */}
-              <div className="space-y-4 mb-8">
+              <address className="space-y-4 mb-8 not-italic">
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-[#f4712f]/10 rounded-lg flex items-center justify-center">
-                    <svg className="w-5 h-5 text-[#f4712f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-10 h-10 bg-[#3064BD]/10 rounded-lg flex items-center justify-center" aria-hidden="true">
+                    <svg className="w-5 h-5 text-[#3064BD]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
                   <div>
-                    <div className="text-white font-medium">Lusaka, Zambia</div>
+                    <div className="text-white font-medium">7636 Mosi-O-Tunya RD, Woodlands</div>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-[#f4712f]/10 rounded-lg flex items-center justify-center">
-                    <svg className="w-5 h-5 text-[#f4712f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-10 h-10 bg-[#3064BD]/10 rounded-lg flex items-center justify-center" aria-hidden="true">
+                    <svg className="w-5 h-5 text-[#3064BD]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
                   <div>
-                    <div className="text-white font-medium">info@tourosmining.com</div>
+                    <a href="mailto:contact@parsetech.org" className="text-white font-medium hover:text-[#3064BD] transition-colors duration-200">
+                      contact@parsetech.org
+                    </a>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-[#f4712f]/10 rounded-lg flex items-center justify-center">
-                    <svg className="w-5 h-5 text-[#f4712f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-10 h-10 bg-[#3064BD]/10 rounded-lg flex items-center justify-center" aria-hidden="true">
+                    <svg className="w-5 h-5 text-[#3064BD]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                   </div>
                   <div>
                     <div className="text-white font-medium">Phone</div>
-                    <div className="text-gray-300">+260 211 XXX XXX</div>
+                    <a href="tel:+260211XXXXXX" className="text-gray-300 hover:text-[#3064BD] transition-colors duration-200">
+                      +260979606913
+                    </a>
                   </div>
                 </div>
-              </div>
+              </address>
 
               {/* Social Links */}
-              <div>
+              <nav aria-label="Social media links">
                 <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
                 <div className="flex space-x-4">
                   {socialLinks.map((social) => (
                     <a
                       key={social.name}
                       href={social.href}
-                      className="w-12 h-12 bg-[#515760]/20 hover:bg-[#f4712f] text-gray-300 hover:text-white rounded-lg flex items-center justify-center transition-all duration-300 hover:transform hover:-translate-y-1"
-                      aria-label={social.name}
+                      className="w-12 h-12 bg-[#515760]/20 hover:bg-[#3064BD] text-gray-300 hover:text-white rounded-lg flex items-center justify-center transition-all duration-300 hover:transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-[#3064BD] focus:ring-offset-2 focus:ring-offset-[#05102d]"
+                      aria-label={`Follow us on ${social.name}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       {social.icon}
                     </a>
                   ))}
                 </div>
-              </div>
+              </nav>
             </div>
 
             {/* Navigation Links */}
-            <div className="lg:col-span-3 grid md:grid-cols-3 gap-8">
+            <nav className="lg:col-span-3 grid md:grid-cols-3 gap-8" aria-label="Footer navigation">
               <div>
-                <h4 className="text-lg font-semibold mb-6 text-[#f4712f]">Company</h4>
+                <h4 className="text-lg font-semibold mb-6 text-[#3064BD]">Company</h4>
                 <ul className="space-y-3">
                   {footerLinks.company.map((link) => (
                     <li key={link.name}>
                       <Link
                         to={link.href}
-                        className="text-gray-300 hover:text-[#f4712f] transition-colors duration-200 hover:underline"
+                        className="text-gray-300 hover:text-[#3064BD] transition-colors duration-200 hover:underline focus:outline-none focus:ring-2 focus:ring-[#3064BD] focus:ring-offset-2 focus:ring-offset-[#05102d] rounded"
                       >
                         {link.name}
                       </Link>
@@ -165,13 +172,14 @@ const Footer: React.FC = () => {
               </div>
 
               <div>
-                <h4 className="text-lg font-semibold mb-6 text-[#f4712f]">Services</h4>
+                <h4 className="text-lg font-semibold mb-6 text-[#3064BD]">Services</h4>
                 <ul className="space-y-3">
                   {footerLinks.services.map((link) => (
                     <li key={link.name}>
                       <button
                         onClick={() => handleServiceLinkClick(link.href)}
-                        className="text-gray-300 hover:text-[#f4712f] transition-colors duration-200 hover:underline text-left"
+                        className="text-gray-300 hover:text-[#3064BD] transition-colors duration-200 hover:underline text-left focus:outline-none focus:ring-2 focus:ring-[#3064BD] focus:ring-offset-2 focus:ring-offset-[#05102d] rounded"
+                        aria-label={`Navigate to ${link.name} service`}
                       >
                         {link.name}
                       </button>
@@ -181,13 +189,13 @@ const Footer: React.FC = () => {
               </div>
 
               <div>
-                <h4 className="text-lg font-semibold mb-6 text-[#f4712f]">Contact</h4>
+                <h4 className="text-lg font-semibold mb-6 text-[#3064BD]">Contact</h4>
                 <ul className="space-y-3">
                   {footerLinks.contact.map((link) => (
                     <li key={link.name}>
                       <Link
                         to={link.href}
-                        className="text-gray-300 hover:text-[#f4712f] transition-colors duration-200 hover:underline"
+                        className="text-gray-300 hover:text-[#3064BD] transition-colors duration-200 hover:underline focus:outline-none focus:ring-2 focus:ring-[#3064BD] focus:ring-offset-2 focus:ring-offset-[#05102d] rounded"
                       >
                         {link.name}
                       </Link>
@@ -195,7 +203,7 @@ const Footer: React.FC = () => {
                   ))}
                 </ul>
               </div>
-            </div>
+            </nav>
           </div>
         </div>
 
@@ -204,13 +212,13 @@ const Footer: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="text-gray-300 mb-4 md:mb-0">
-                © {currentYear} Touros Mining. All rights reserved.
+                © {currentYear} Parse Technologies. All rights reserved.
               </div>
               <div className="flex flex-wrap gap-6 text-sm">
-                <a href="/privacy" className="text-gray-300 hover:text-[#f4712f] transition-colors duration-200">
+                <a href="/privacy" className="text-gray-300 hover:text-[#3064BD] transition-colors duration-200">
                   Privacy Policy
                 </a>
-                <a href="/terms" className="text-gray-300 hover:text-[#f4712f] transition-colors duration-200">
+                <a href="/terms" className="text-gray-300 hover:text-[#3064BD] transition-colors duration-200">
                   Terms of Service
                 </a>
               </div>

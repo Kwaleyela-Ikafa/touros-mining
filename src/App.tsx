@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -23,8 +24,14 @@ const HomePage: React.FC = () => {
 };
 
 const App: React.FC = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [pathname]);
+
   return (
-    <Router>
+    <>
       <div className="min-h-screen">
         <Navigation />
         <Routes>
@@ -35,7 +42,7 @@ const App: React.FC = () => {
         </Routes>
         <Footer />
       </div>
-    </Router>
+    </>
   );
 };
 
