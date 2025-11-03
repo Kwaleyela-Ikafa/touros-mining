@@ -11,12 +11,55 @@ const ContactPage: React.FC = () => {
     message: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://formspree.io/f/movpzrnj', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        // Clear the form
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          phone: '',
+          service: '',
+          subject: '',
+          message: ''
+        });
+
+        // Show success message
+        setShowSuccess(true);
+
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+          setShowSuccess(false);
+        }, 5000);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -175,7 +218,22 @@ const ContactPage: React.FC = () => {
 
             {/* Contact Form */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-              <form action="https://formspree.io/f/movpzrnj" method="POST" className="space-y-6" aria-label="Contact form">
+              {/* Success Message */}
+              {showSuccess && (
+                <div className="mb-6 p-4 bg-green-500/20 border border-green-500/50 rounded-xl text-white animate-fade-in">
+                  <div className="flex items-center">
+                    <svg className="w-6 h-6 mr-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div>
+                      <h4 className="font-semibold">Message Sent Successfully!</h4>
+                      <p className="text-sm text-gray-200">Thank you for contacting us. We'll get back to you within 24 hours.</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-6" aria-label="Contact form">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
@@ -301,13 +359,16 @@ const ContactPage: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#3064BD] hover:bg-[#3064BD]/90 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl hover:transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-[#3064BD]/50"
+                  disabled={isSubmitting}
+                  className="w-full bg-[#3064BD] hover:bg-[#3064BD]/90 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl hover:transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-[#3064BD]/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                   aria-label="Send message to Parse Technologies"
                 >
-                  Send Message
-                  <svg className="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                  </svg>
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {!isSubmitting && (
+                    <svg className="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                    </svg>
+                  )}
                 </button>
 
                 <p className="text-gray-300 text-sm text-center">
