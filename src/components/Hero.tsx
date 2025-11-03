@@ -100,13 +100,13 @@ const Hero: React.FC = () => {
                 </div>
               </div>
 
-              {/* Quality Badge */}
+              {/* Quality Badge
               <div className="absolute -bottom-6 -right-6 bg-[#3064BD] text-white rounded-2xl p-6 shadow-xl" role="img" aria-label="ISO 25010 Certified">
                 <div className="text-center">
                   <div className="text-lg font-bold">ISO 25010</div>
                   <div className="text-sm opacity-90">Certified</div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Background Decorations */}

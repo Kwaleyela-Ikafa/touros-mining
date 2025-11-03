@@ -112,10 +112,12 @@ const ServicesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Manual Testing */}
-      <section id="manual" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+      {/* Services Grid - Checkerboard Layout */}
+      {/* Row 1: Manual Testing (White) + Automation Testing (Dark Blue) */}
+      <section>
+        <div className="grid lg:grid-cols-2">
+          {/* Manual Testing - White Background */}
+          <div id="manual" className="py-20 px-8 lg:px-12 bg-white flex items-end">
             <div>
               <div className="flex items-center space-x-4 mb-6">
                 <div className="w-16 h-16 bg-[#3064BD]/10 rounded-xl flex items-center justify-center">
@@ -132,7 +134,7 @@ const ServicesPage: React.FC = () => {
                 every feature from the user's perspective.
               </p>
 
-              <div className="space-y-4 mb-8">
+              <div className="space-y-4">
                 {manualTestingFeatures.map((feature, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <div className="w-6 h-6 bg-[#3064BD]/10 rounded-full flex items-center justify-center flex-shrink-0">
@@ -145,31 +147,11 @@ const ServicesPage: React.FC = () => {
                 ))}
               </div>
             </div>
-
-            <div className="relative">
-              <img
-                src="https://i.postimg.cc/SKWX6L8c/mining-operations.webp"
-                alt="Manual testing process"
-                className="w-full h-auto rounded-2xl shadow-xl"
-              />
-            </div>
           </div>
-        </div>
-      </section>
 
-      {/* Automation Testing */}
-      <section id="automation" className="py-20 bg-[#1a2332]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1">
-              <img
-                src="https://i.postimg.cc/xdtQVcVW/mining-logistics.webp"
-                alt="Automation testing framework"
-                className="w-full h-auto rounded-2xl shadow-xl"
-              />
-            </div>
-
-            <div className="order-1 lg:order-2">
+          {/* Automation Testing - Dark Blue Background */}
+          <div id="automation" className="py-20 px-8 lg:px-12 bg-[#1a2332] flex items-start">
+            <div>
               <div className="flex items-center space-x-4 mb-6">
                 <div className="w-16 h-16 bg-[#3064BD]/30 rounded-xl flex items-center justify-center border border-[#3064BD]/50">
                   <svg className="w-8 h-8 text-[#60a5fa]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -186,7 +168,7 @@ const ServicesPage: React.FC = () => {
                 your technology stack.
               </p>
 
-              <div className="space-y-4 mb-8">
+              <div className="space-y-4">
                 {automationFeatures.map((feature, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <div className="w-6 h-6 bg-[#3064BD]/30 rounded-full flex items-center justify-center flex-shrink-0 border border-[#3064BD]/50">
@@ -203,64 +185,45 @@ const ServicesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Performance Testing */}
-      <section id="performance" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+      {/* Row 2: Performance Testing (Dark Blue) + Security Testing (White) */}
+      <section>
+        <div className="grid lg:grid-cols-2">
+          {/* Performance Testing - Dark Blue Background */}
+          <div id="performance" className="py-20 px-8 lg:px-12 bg-[#1a2332] flex items-end">
             <div>
               <div className="flex items-center space-x-4 mb-6">
-                <div className="w-16 h-16 bg-[#3064BD]/10 rounded-xl flex items-center justify-center">
-                  <svg className="w-8 h-8 text-[#3064BD]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <div className="w-16 h-16 bg-[#3064BD]/30 rounded-xl flex items-center justify-center border border-[#3064BD]/50">
+                  <svg className="w-8 h-8 text-[#60a5fa]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-[#05102d]">Performance Testing</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-white">Performance Testing</h2>
               </div>
 
-              <p className="text-lg text-[#515760] mb-8 leading-relaxed">
+              <p className="text-lg text-gray-200 mb-8 leading-relaxed">
                 Load, stress, and performance testing to ensure your applications can handle real-world
                 usage and scale effectively. We identify bottlenecks and optimize your system's
                 performance before they impact users.
               </p>
 
-              <div className="space-y-4 mb-8">
+              <div className="space-y-4">
                 {performanceFeatures.map((feature, index) => (
                   <div key={index} className="flex items-center space-x-3">
-                    <div className="w-6 h-6 bg-[#3064BD]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <svg className="w-3 h-3 text-[#3064BD]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-6 h-6 bg-[#3064BD]/30 rounded-full flex items-center justify-center flex-shrink-0 border border-[#3064BD]/50">
+                      <svg className="w-3 h-3 text-[#60a5fa]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-[#515760]">{feature}</span>
+                    <span className="text-gray-200">{feature}</span>
                   </div>
                 ))}
               </div>
             </div>
-
-            <div className="relative">
-              <img
-                src="https://i.postimg.cc/FFnKJCq2/heavy-machinery.webp"
-                alt="Performance testing dashboard"
-                className="w-full h-auto rounded-2xl shadow-xl"
-              />
-            </div>
           </div>
-        </div>
-      </section>
 
-      {/* Security Testing */}
-      <section id="security" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1">
-              <img
-                src="https://i.postimg.cc/gJtG8rMv/mining-transportation.webp"
-                alt="Security testing process"
-                className="w-full h-auto rounded-2xl shadow-xl"
-              />
-            </div>
-
-            <div className="order-1 lg:order-2">
+          {/* Security Testing - White Background */}
+          <div id="security" className="py-20 px-8 lg:px-12 bg-white flex items-start">
+            <div>
               <div className="flex items-center space-x-4 mb-6">
                 <div className="w-16 h-16 bg-[#3064BD]/10 rounded-xl flex items-center justify-center">
                   <svg className="w-8 h-8 text-[#3064BD]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -276,7 +239,7 @@ const ServicesPage: React.FC = () => {
                 users' data and maintain trust.
               </p>
 
-              <div className="space-y-4 mb-8">
+              <div className="space-y-4">
                 {securityFeatures.map((feature, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <div className="w-6 h-6 bg-[#3064BD]/10 rounded-full flex items-center justify-center flex-shrink-0">
@@ -293,10 +256,11 @@ const ServicesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Mobile Testing */}
-      <section id="mobile" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+      {/* Row 3: Mobile Testing (White) + QA Consulting (Dark Blue) */}
+      <section>
+        <div className="grid lg:grid-cols-2">
+          {/* Mobile Testing - White Background */}
+          <div id="mobile" className="py-20 px-8 lg:px-12 bg-white flex items-end">
             <div>
               <div className="flex items-center space-x-4 mb-6">
                 <div className="w-16 h-16 bg-[#3064BD]/10 rounded-xl flex items-center justify-center">
@@ -313,7 +277,7 @@ const ServicesPage: React.FC = () => {
                 devices and simulators.
               </p>
 
-              <div className="space-y-4 mb-8">
+              <div className="space-y-4">
                 {mobileFeatures.map((feature, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <div className="w-6 h-6 bg-[#3064BD]/10 rounded-full flex items-center justify-center flex-shrink-0">
@@ -326,31 +290,11 @@ const ServicesPage: React.FC = () => {
                 ))}
               </div>
             </div>
-
-            <div className="relative">
-              <img
-                src="https://i.postimg.cc/SKWX6L8c/mining-operations.webp"
-                alt="Mobile testing on multiple devices"
-                className="w-full h-auto rounded-2xl shadow-xl"
-              />
-            </div>
           </div>
-        </div>
-      </section>
 
-      {/* QA Consulting */}
-      <section id="consulting" className="py-20 bg-[#1a2332]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1">
-              <img
-                src="https://i.postimg.cc/xdtQVcVW/mining-logistics.webp"
-                alt="QA consulting and strategy"
-                className="w-full h-auto rounded-2xl shadow-xl"
-              />
-            </div>
-
-            <div className="order-1 lg:order-2">
+          {/* QA Consulting - Dark Blue Background */}
+          <div id="consulting" className="py-20 px-8 lg:px-12 bg-[#1a2332] flex items-start">
+            <div>
               <div className="flex items-center space-x-4 mb-6">
                 <div className="w-16 h-16 bg-[#3064BD]/30 rounded-xl flex items-center justify-center border border-[#3064BD]/50">
                   <svg className="w-8 h-8 text-[#60a5fa]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -366,7 +310,7 @@ const ServicesPage: React.FC = () => {
                 workflows that scale with your organization.
               </p>
 
-              <div className="space-y-4 mb-8">
+              <div className="space-y-4">
                 {consultingFeatures.map((feature, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <div className="w-6 h-6 bg-[#3064BD]/30 rounded-full flex items-center justify-center flex-shrink-0 border border-[#3064BD]/50">

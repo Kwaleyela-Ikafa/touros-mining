@@ -101,7 +101,7 @@ const Footer: React.FC = () => {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-white font-medium">Lusaka, Zambia</div>
+                    <div className="text-white font-medium">7636 Mosi-O-Tunya RD, Woodlands</div>
                   </div>
                 </div>
 
@@ -112,8 +112,8 @@ const Footer: React.FC = () => {
                     </svg>
                   </div>
                   <div>
-                    <a href="mailto:info@parsetechnologies.com" className="text-white font-medium hover:text-[#3064BD] transition-colors duration-200">
-                      info@parsetechnologies.com
+                    <a href="mailto:contact@parsetech.org" className="text-white font-medium hover:text-[#3064BD] transition-colors duration-200">
+                      contact@parsetech.org
                     </a>
                   </div>
                 </div>
@@ -127,7 +127,7 @@ const Footer: React.FC = () => {
                   <div>
                     <div className="text-white font-medium">Phone</div>
                     <a href="tel:+260211XXXXXX" className="text-gray-300 hover:text-[#3064BD] transition-colors duration-200">
-                      +260 211 XXX XXX
+                      +260979606913
                     </a>
                   </div>
                 </div>
